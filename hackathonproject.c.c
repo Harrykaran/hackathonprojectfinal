@@ -446,10 +446,11 @@ void curLocName(int n)
     switch (n)
     {
         case 0 : printf("Delhi\n");break;
-        case 1 : printf("Panaji\n");break;
-        case 2 : printf("Mumbai\n");break;
-        case 3 : printf("Chennai\n");break;
-        case 4 : printf("Kolkata\n");break;
+       case 0 : printf("Cherkala\n");break;
+        case 1 : printf("Chattanchal\n");break;
+        case 2 : printf("Kalanad\n");break;
+        case 3 : printf("Chemnad\n");break;
+        case 4 : printf("Kasaragod\n");break;
         default: printf("Error\n");return;
     }
     return;
