@@ -1,9 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int main()
-{
 
 
 #include <stdio.h>
@@ -66,7 +60,8 @@ int flight()
 int bus()
 {   printf("****Welcome to iBus****\n");
 printf("**Amid of COVID-19,All buses are running on 50% capacity**\n");
-for(int i=0;i<100;i++){
+for(int i=0;i<100;i++)
+{
     printf("-");
 }
 printf("\n");
@@ -100,14 +95,16 @@ printf("2.Bus No.2,Seat Available:%d,Fare:33\n",b_2);
 printf("3.Bus No.3,Seat Available:%d,Fare:19\n",b_3);
 printf("4.Bus No.4,Seat Available:%d,Fare:29\n",b_4);
 
-for(int i=0;i<40;i++){
+for(int i=0;i<40;i++)
+{
     printf("-");
 }
 
 printf("\nChoose anyone from above options(enter number only):");
 scanf("%d",&bus);  //taking input of regarding train choice
 
-for(int i=0;i<40;i++){
+for(int i=0;i<40;i++)
+{
     printf("-");
 }
 
@@ -119,8 +116,10 @@ int num_of_passenger=0;
 int seat[40];
 int seat_1[40];
 
-for(int i=0;;i++){
-    if(opt_upto>80){
+for(int i=0;;i++)
+{
+    if(opt_upto>80)
+    {
         break;
 
     }
@@ -226,108 +225,129 @@ for(int i=0;i<40;i++){
     printf("-");
 }
 
-void booking(int opted,int fare){
+void booking(int opted,int fare)
+{
 
-int n=1;
-int seat[27];
-int t=0;
-int num_of_passenger=0;
-
-for(int i=1;i<10;i++){
-    if(3*n >= opted){
-        break;
-    }
-n +=1;
-}
-t=opted-3*(n-1);
-int x=2;
-int y=1;
-int z=0;
-if(t==1){
-    for(int i =n;i<10;i++){
-
-        if(i==n){
-            seat[0]=8*(i-1)+4;
-            seat[1]=8*(i-1)+7;
-                }
-
-        if(i>n){
-            seat[x]=8*(i-1)+1;
-            seat[x+1]=8*(i-1)+4;
-            seat[x+2]=8*(i-1)+7;
-            x+=1;
-                }
-      }
-}
-if(t==2){
-    for(int i=n;i<10;i++){
-        if(i==n){
-            seat[0]=8*(i-1)+7;
-
+    int n=1;
+    int seat[27];
+    int t=0;
+    int num_of_passenger=0;
+    
+    for(int i=1;i<10;i++)
+    {
+        if(3*n >= opted)
+        {
+            break;
         }
-        if(i>n){
-            seat[y]=8*(i-1)+1;
-            seat[y+1]=8*(i-1)+4;
-            seat[y+2]=8*(i-1)+7;
-            y+=1;
-        }
+    n +=1;
     }
-}
-if(t==3){
-    for(int i=n;i<10;i++){
-
-        if(i>n){
-            seat[z]=8*(i-1)+1;
-            seat[z+1]=8*(i-1)+4;
-            seat[z+2]=8*(i-1)+7;
-            z+=1;
+    t=opted-3*(n-1);
+    int x=2;
+    int y=1;
+    int z=0;
+    if(t==1)
+    {
+        for(int i =n;i<10;i++)
+        {
+    
+            if(i==n)
+            {
+                seat[0]=8*(i-1)+4;
+                seat[1]=8*(i-1)+7;
             }
-   }
-
+    
+            if(i>n)
+            {
+                seat[x]=8*(i-1)+1;
+                seat[x+1]=8*(i-1)+4;
+                seat[x+2]=8*(i-1)+7;
+                x+=1;
+            }
+        }
+    }
+    if(t==2)
+    {
+        for(int i=n;i<10;i++)
+        {
+            if(i==n)
+            {
+                seat[0]=8*(i-1)+7;
+    
+            }
+            if(i>n)
+            {
+                seat[y]=8*(i-1)+1;
+                seat[y+1]=8*(i-1)+4;
+                seat[y+2]=8*(i-1)+7;
+                y+=1;
+            }
+        }
+    }
+    if(t==3)
+    {
+        for(int i=n;i<10;i++)
+        {
+    
+            if(i>n)
+            {
+                seat[z]=8*(i-1)+1;
+                seat[z+1]=8*(i-1)+4;
+                seat[z+2]=8*(i-1)+7;
+                z+=1;
+            }
+       }
+    
+    }
+    
+    int seat_1[27];
+    
+    
+    printf("Enter the Number of Passenger:\n");
+    scanf("%d",&num_of_passenger);
+    
+    for(int i=0;i<num_of_passenger;i++)
+    {
+        seat_1[i] = seat[i];
+    }
+    
+    for(int j=0;j<num_of_passenger;j++)
+    {
+        printf("Seat number of passenger %d is %d\n",j+1,seat_1[j]);
+    }
+    for(int i=0;i<40;i++)
+    {
+        printf("-");
+    }
+    printf("\nTotal fare:%d\n",num_of_passenger*fare);
+    
 }
-
-int seat_1[27];
-
-
-printf("Enter the Number of Passenger:\n");
-scanf("%d",&num_of_passenger);
-
-for(int i=0;i<num_of_passenger;i++){
-    seat_1[i] = seat[i];
-}
-
-for(int j=0;j<num_of_passenger;j++){
-    printf("Seat number of passenger %d is %d\n",j+1,seat_1[j]);
-}
-for(int i=0;i<40;i++){
-    printf("-");
-}
-printf("\nTotal fare:%d\n",num_of_passenger*fare);
-
-}
-
-if(train==1){
-    printf("\nWelcome to Gatiman Express,No.of Seats Available:%d\n",t_1);
-    int opted=27-t_1;
-    booking(opted,fare_1);
-}
-if(train==2){
-    printf("\nWelcome to Rajdhani Express,No.of Seats Available:%d\n",t_2);
-    int opted=27-t_2;
-    booking(opted,fare_2);
-}
-if(train==3){
-    printf("\nWelcome to Shatabdi Express,No.of Seats Available:%d\n",t_3);
-    int opted=27-t_3;
-    booking(opted,fare_3);
-}
-if(train==4){
-    printf("\nWelcome to Duronto Express,No.of Seats Available:%d\n",t_4);
-    int opted=27-t_4;
-    booking(opted,fare_4);
-}
-
-    return 0;
+    
+    if(train==1)
+    {
+        printf("\nWelcome to Gatiman Express,No.of Seats Available:%d\n",t_1);
+        int opted=27-t_1;
+        booking(opted,fare_1);
+    }
+    if(train==2)
+    {
+        printf("\nWelcome to Rajdhani Express,No.of Seats Available:%d\n",t_2);
+        int opted=27-t_2;
+        booking(opted,fare_2);
+    }
+    if(train==3)
+    {
+        printf("\nWelcome to Shatabdi Express,No.of Seats Available:%d\n",t_3);
+        int opted=27-t_3;
+        booking(opted,fare_3);
+    }
+        if(train==4)
+        {
+        printf("\nWelcome to Duronto Express,No.of Seats Available:%d\n",t_4);
+        int opted=27-t_4;
+        booking(opted,fare_4);
+        }
+    
+        return 0;
 }
 void Booking();
 void curLocName(int n);
